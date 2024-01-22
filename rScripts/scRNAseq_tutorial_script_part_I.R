@@ -13,6 +13,8 @@ library(Seurat)
 ##  Read in raw data -- video 1
 ##====================================
 
+
+##  MacMonster
 NML_1 <- Read10X (data.dir = "/Users/jyli/SingleCellTutorial/dataDownload/GSE132771_RAW/NML1")
 NML_2 <- Read10X (data.dir = "/Users/jyli/SingleCellTutorial/dataDownload/GSE132771_RAW/NML2")
 NML_3 <- Read10X (data.dir = "/Users/jyli/SingleCellTutorial/dataDownload/GSE132771_RAW/NML3")
