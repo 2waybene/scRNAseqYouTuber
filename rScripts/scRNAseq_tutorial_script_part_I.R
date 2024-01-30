@@ -19,6 +19,13 @@ NML_1 <- Read10X (data.dir = "/Users/jyli/SingleCellTutorial/dataDownload/GSE132
 NML_2 <- Read10X (data.dir = "/Users/jyli/SingleCellTutorial/dataDownload/GSE132771_RAW/NML2")
 NML_3 <- Read10X (data.dir = "/Users/jyli/SingleCellTutorial/dataDownload/GSE132771_RAW/NML3")
 
+##  Window
+NML_1 <- Read10X (data.dir = "E:/SingleCellPublicData/dataDownload/GSE132771_RAW/NML1")
+NML_2 <- Read10X (data.dir = "E:/SingleCellPublicData/dataDownload/GSE132771_RAW/NML2")
+NML_3 <- Read10X (data.dir = "E:/SingleCellPublicData/dataDownload/GSE132771_RAW/NML3")
+
+
+
 ls()
 
 ##  create seurate objectives
@@ -37,11 +44,16 @@ View(NML_I@meta.data)
 NML_II <- CreateSeuratObject(counts = NML_2, project = "NML_II", min.cells = 3, min.features = 200)
 NML_III <- CreateSeuratObject(counts = NML_3, project = "NML_III", min.cells = 3, min.features = 200)
 
-##  save seurate objectives
-
+##  MacMonster
 saveRDS(NML_I, file = "/Users/jyli/SingleCellTutorial/workingData/NML_I.RDS")
 saveRDS(NML_II, file = "/Users/jyli/SingleCellTutorial/workingData/NML_II.RDS")
 saveRDS(NML_III, file = "/Users/jyli/SingleCellTutorial/workingData/NML_III.RDS")
+
+##  Window
+saveRDS(NML_I, file = "E:/SingleCellPublicData/workingData/NML_I.RDS")
+saveRDS(NML_II, file = "E:/SingleCellPublicData/workingData/NML_II.RDS")
+saveRDS(NML_III, file = "E:/SingleCellPublicData/workingData/NML_III.RDS")
+
 
 
 ##=========================================
@@ -50,9 +62,12 @@ saveRDS(NML_III, file = "/Users/jyli/SingleCellTutorial/workingData/NML_III.RDS"
 
 library(Seurat)
 library(tidyverse)
+
 NML_I <- readRDS("/Users/jyli/SingleCellTutorial/workingData/NML_I.RDS")
 NML_II <- readRDS("/Users/jyli/SingleCellTutorial/workingData/NML_II.RDS")
 NML_III <- readRDS("/Users/jyli/SingleCellTutorial/workingData/NML_III.RDS")
+
+
 
 MergeDNML <- merge (NML_I, y = c(NML_II, NML_III),
                    add.cell.ids = ls()[1:3],
@@ -63,6 +78,7 @@ MergeDNML
 View(MergeDNML@meta.data)
 saveRDS(MergeDNML, file = "/Users/jyli/SingleCellTutorial/workingData/MergeDNML.RDS")
 
+saveRDS(MergeDNML, file = "E:/SingleCellPublicData/workingData/MergeDNML.RDS")
 
 ##====================================
 ##  Data QC -- video 4
