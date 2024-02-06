@@ -92,3 +92,8 @@ saveRDS (fFlox.combined, file = "/Volumes/li11/project2023/CidlowskiRNAseq/Matia
 
 fFlox.combined <- readRDS ( "/Volumes/li11/project2023/CidlowskiRNAseq/MatiasProject/combinedData/processedData/femaleFlox4samples_standardProcessed.rds")
 DimPlot(fFlox.combined, reduction = "umap", label = TRUE)
+
+fFlox.combined <- FindClusters(fFlox.combined, resolution = 0.1)
+DimPlot(fFlox.combined, reduction = "umap", label = TRUE)
+
+

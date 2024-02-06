@@ -5,9 +5,11 @@ library(tidyverse)
 library(pheatmap)
 library(Seurat)
 
+##  MyMacMonster
 hdf5_obj <- Read10X_h5(filename = "~/SingleCellTutorial/dataDownload/HumanPBMCv3dot120K/20k_PBMC_3p_HT_nextgem_Chromium_X_raw_feature_bc_matrix.h5",
                        use.name=TRUE,
                        unique.features=TRUE)
+
 pbmc.seurat <- CreateSeuratObject(counts  = hdf5_obj)
 
 dim(pbmc.seurat@meta.data)
@@ -34,6 +36,7 @@ DimPlot(pbmc.seurat.filtered, reduction = "umap")
 
 saveRDS(pbmc.seurat.filtered, file = "~/SingleCellTutorial/singleR/pbmc_filtered_processed.RDS")
 pbmc.seurat.filtered <- readRDS("~/SingleCellTutorial/singleR/pbmc_filtered_processed.RDS")
+
 ref <- celldex::HumanPrimaryCellAtlasData()
 View(as.data.frame(colData(ref)))
      

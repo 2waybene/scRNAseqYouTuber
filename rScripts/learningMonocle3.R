@@ -10,7 +10,9 @@
 #                       'SummarizedExperiment', 'batchelor', 'HDF5Array',
 #                       'terra', 'ggrastr'))
 
-
+##  Encountered error when I tried to install monocle3
+##  And, it occured when I attempted to use scDblFinder
+## https://github.com/cole-trapnell-lab/monocle3/issues/690
 
 ##============================================
 ##  Tutorial video 1
@@ -178,6 +180,7 @@ library(tidyverse)
 library(SeuratWrappers)
 library(monocle3)
 
+##  MyWorkMac
 # 1. Analyze scRNA-seq data using Seurat------
 # Read
 IPF_I<- Read10X(data.dir = "/Users/li11/myGit/SingleCellDataDownload/GSE132771_RAW/IPF1Lin/")

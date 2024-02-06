@@ -8,7 +8,12 @@ set.seed(123)
 
 ##  Need data path for sample run
 # 1. Create Seurat Objects
-NML1 <- Read10X(data.dir = "../scDblFinder/NML1_Lin/") # GSE132771
+
+# 1. Analyze scRNA-seq data using Seurat------
+# Read
+
+##  MyWorkMac
+NML1 <- Read10X(data.dir = "/Users/li11/myGit/SingleCellDataDownload/GSE132771_RAW/NML1Lin/") # GSE132771
 
 NML1 <- CreateSeuratObject(counts = NML1, project = "NML1", min.cells = 3, 
                            min.features = 200)
@@ -34,7 +39,16 @@ DimPlot(NML1, reduction = 'umap', label = TRUE)
 
 # 4. run scDblFinde to identify doublets, SingleCellExperiment object
 Idents(NML1)
-sce <- scDblFinder(GetAssayData(NML1, slot= "counts"), clusters = Idents(NML1))
+
+# Seurat v.5
+sce <- scDblFinder(GetAssayData(NML1, layer = "counts"), clusters = Idents(NML1))
+
+Seurat.cnt <- GetAssayData(NML1, layer = "counts")
+View(Seurat.cnt)
+
+
+# Seurat v.4
+#sce <- scDblFinder(GetAssayData(NML1, slot= "counts"), clusters = Idents(NML1))
 
 # 5. import the scDblFinder.class from sce object to the Seurat object
 view(NML1@meta.data)
