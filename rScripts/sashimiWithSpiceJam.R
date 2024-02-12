@@ -227,6 +227,11 @@ print(ggWide1);
 
 
 ## problem in preparing sashimi file for shGria1
+## BIO_do_connect() failed
+## SSL error: unsafe legacy renegotiation disabled
+##  (16:52:18) 06Feb2024:   getGRcoverageFromBw():import_or_null() 
+## error:BigWig file not accessible:'https://orio.niehs.nih.gov/ucscview/farrisHub/mm10/NS50211CA2CB492_1.sickle.merged.cutadapt.STAR_mm10.pos.bw', returning NULL. 
+## <simpleError in seqinfo(con): UCSC library operation failed>
 
 if (exists("flatExonsByGeneMm10")) {
   shGria1 <- prepareSashimi(gene="Gria1",
