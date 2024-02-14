@@ -25,9 +25,9 @@ library(enrichplot) # for visualisations
 library(ggupset) # for visualisations
 # Set input path
 in_path <- "x:/myGit/scRNAseqYouTuber/testData/" # input path, where your data is located
-out_path <- "x:/myGit/scRNAseqYouTuber/PEA/Results/" # output path, where you want your results exported to
-bg_path <- "x:/myGit/scRNAseqYouTuber/PEA/Background_genes/" # folder with your background genes used for PEA
-
+#out_path <- "x:/myGit/scRNAseqYouTuber/PEA/Results/" # output path, where you want your results exported to
+bg_path <- "x:/project2024/PathwayAnalysisShortCourse/GSEAdb/" # folder with your background genes used for PEA
+out_path <- 'x:/project2024/PathwayAnalysisShortCourse/' # output path, where you want your results exported to
 # Functions ------------------------------------------------
 ## Function: Adjacency matrix to list ####
 matrix_to_list <- function(pws){
@@ -53,11 +53,10 @@ genes_in_data <- df$gene_symbol
 # Get the genes that are present in your dataframe
 
 
-genes_in_data <- df$gene_symbol
-
 # Read in the .gmt file
 
 file <- "x:/project2024/PathwayAnalysisShortCourse/GSEAdb/c2.cp.kegg_legacy.v2023.2.Hs.symbols.gmt"
+file <- "x:/project2024/PathwayAnalysisShortCourse/GSEAdb/c2.cp.reactome.v2023.2.Hs.symbols.gmt"
 
 ##  from statsquid
 ## file <- "PEA/Background_genes/c2.cp.kegg.v7.5.1.symbols.gmt"
@@ -75,6 +74,7 @@ pwl2 <- pwl2[pwl2$gene %in% genes_in_data,]
 dim(pwl2)
 # [1] 12551     2
 filename <- 'x:/project2024/PathwayAnalysisShortCourse/GSEAdb/kegg.RDS'
+filename <- 'x:/project2024/PathwayAnalysisShortCourse/GSEAdb/reactome.RDS'
 saveRDS(pwl2, filename)
 
 
@@ -120,9 +120,10 @@ bg_genes <- readRDS(paste0(bg_path, 'reactome.RDS')) # read in the background ge
 background_genes <- 'KEGG' # for our filename
 bg_genes <- readRDS('x:/project2024/PathwayAnalysisShortCourse/GSEAdb/kegg.RDS')
 
+
 padj_cutoff <- 0.05 # p-adjusted threshold, used to filter out pathways
 genecount_cutoff <- 5 # minimum number of genes in the pathway, used to filter out pathways
-out_path <- 'x:/project2024/PathwayAnalysisShortCourse/'
+# out_path <- 'x:/project2024/PathwayAnalysisShortCourse/'
 filename <- paste0(out_path, 'clusterProfiler/', name_of_comparison, '_', background_genes) # filename of our PEA results
 
 # Run clusterProfiler on each sub-dataframe
