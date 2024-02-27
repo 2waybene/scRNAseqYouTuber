@@ -1,0 +1,18 @@
+Often time, there are cases that although a file looks pretty normal, but if one opens it with an ascii base editor, he may see it. I encountered this long time ago and got a wordpress posting to document such process. I just came across with one, and feel that I need to do a more thorough research and document some solution.
+
+I have a gene symbole list created from R (in windows) named: IntOGen_MDAnderson_union_DriverGenes_MusM.txt 
+
+ 
+Here are some good solutions:
+## credit: https://stackoverflow.com/questions/43108359/how-to-remove-all-special-characters-in-linux-text
+ 
+#Solution 1
+cat IntOGen_MDAnderson_union_DriverGenes_MusM.txt  | tr -d '\015' > ANewFileWithoutSpecialChars.txt
+
+
+#Solution 2, Important: To enter ^M, type CTRL-V, then CTRL-M
+
+sed -e "s/^M//" filename > newfilename
+
+
+
