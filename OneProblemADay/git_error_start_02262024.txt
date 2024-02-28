@@ -1,0 +1,19 @@
+Since I am using these solutions at work, home office and home, I need to constantly edit, pull/push to the github repository. Today, I encounter this warning from my home office macprob laptop:
+
+(base) li11@almbp02012678 scRNAseqYouTuber % git commit -m "start 02272024"
+[main 80af6ed] start 02272024
+ Committer: Jianying Li <li11@almbp02012678.local.niehs.nih.gov>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 18 insertions(+)
+ create mode 100644 OneProblemADay/Bash_unseenCharacter_02272024.txt
