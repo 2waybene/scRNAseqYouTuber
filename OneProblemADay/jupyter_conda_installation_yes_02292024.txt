@@ -1,0 +1,51 @@
+Problem of the day:
+
+I encountered a strange situation, I can import python package from command line, from ipython, but NOT from the jupyter notebook that using the same kernel.
+
+Solution:
+
+To examine this, I try to compare the results running the following commands in both ipython and in your jupyter notebook. 
+
+ 
+import sys
+print(sys.executable)
+print(sys.path) 
+
+I got different results, and most stunning difference is the sys.executable, apparently they are using different python interpreters!!!
+
+So, I have to make the "jupyter" is the same. I end up invoking jupyter in the following manner:
+
+
+~/miniconda3/envs/NSforest/bin/jupyter notebook --no-browser --port=8889 --ip=0.0.0.0
+
+
+
+##==========================================================================================
+I am getting stuck installing [y/n] on Jupyter notebook, 
+
+i.e. !conda install -c conda-forge biopython 
+
+Answers:
+
+Pass your "!pip install or !conda install somePackages" with command the keyword "--yes".
+
+i.e. !conda install -c conda-forge biopython --yes
+
+##	credit to https://forums.fast.ai/t/are-you-getting-stuck-installing-y-n-on-jupyter-notebook/70096
+I know a lot of people may know this already, but I just figured this out and hopefully it’s helpful to somebody.
+
+
+Side note:
+
+One needs to make sure where python, jupyter are launched from, 
+
+In [7]: import sys
+
+In [8]: print(sys.executable)
+/ddn/gs1/home/li11/miniconda3/envs/NSforest/bin/python3.8
+
+In [9]: print(sys.path)
+['/ddn/gs1/home/li11/miniconda3/envs/NSforest/bin', '', '/ddn/g                                        s1/home/li11/.local/lib/python2.7/site-packages', '/ddn/gs1/hom                                        e/li11/tools/python2-lib', '/ddn/gs1/home/li11/tools/python2-li                                        b/muver-0.1.0-py2.7.egg', '/ddn/gs1/home/li11/tools/python2-lib                                        /regex-2017.11.9-py2.7-linux-x86_64.egg', '/ddn/gs1/home/li11/m                                        iniconda3/envs/NSforest/lib/python38.zip', '/ddn/gs1/home/li11/                                        miniconda3/envs/NSforest/lib/python3.8', '/ddn/gs1/home/li11/mi                                        niconda3/envs/NSforest/lib/python3.8/lib-dynload', '/ddn/gs1/ho                                        me/li11/miniconda3/envs/NSforest/lib/python3.8/site-packages']
+
+
+I know a lot of people may know this already, but I just figured this out and hopefully it’s helpful to somebody.
