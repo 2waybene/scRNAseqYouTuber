@@ -1,5 +1,7 @@
 Since I am using these solutions at work, home office and home, I need to constantly edit, pull/push to the github repository. Today, I encounter this warning from my home office macprob laptop:
 
+
+##	my linux server
 (base) li11@almbp02012678 scRNAseqYouTuber % git commit -m "start 02272024"
 [main 80af6ed] start 02272024
  Committer: Jianying Li <li11@almbp02012678.local.niehs.nih.gov>
@@ -17,3 +19,54 @@ After doing this, you may fix the identity used for this commit with:
 
  1 file changed, 18 insertions(+)
  create mode 100644 OneProblemADay/Bash_unseenCharacter_02272024.txt
+
+##	my work office mac
+git commit -m "a bright new day with checking in"
+[main 291cd57] a bright new day with checking in
+ Committer: Jianying Li <li11@almbp02012678.local.niehs.nih.gov>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 19 insertions(+)
+
+Solutions: 
+
+The command "git config --global --edit" gives me the following and I am changing my email to see whether it solves the problem.
+
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#       name = Jianying Li
+#       email = jianying.li@gmail.com
+
+##	somehow the error occurs again with message like the following:
+
+(base) li11@almbp02012678 scRNAseqYouTuber % git commit -m "done for today's problem"
+[main c0c2303] done for today's problem
+ Committer: Jianying Li <li11@almbp02012678.local.niehs.nih.gov>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 20 insertions(+)
+
+I follow the instruction, and it is fine now.
+
+
+
