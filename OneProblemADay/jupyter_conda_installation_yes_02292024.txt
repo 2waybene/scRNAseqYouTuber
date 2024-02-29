@@ -19,6 +19,26 @@ So, I have to make the "jupyter" is the same. I end up invoking jupyter in the f
 ~/miniconda3/envs/NSforest/bin/jupyter notebook --no-browser --port=8889 --ip=0.0.0.0
 
 
+##================================
+it occurs again, even I used ~/miniconda3/envs/NSforest/bin/jupyter notebook --no-browser --port=8889 --ip=0.0.0.0
+I am still getting the jypter from a different location!!
+
+Did some searches and found people are having the same issue:
+
+https://youtrack.jetbrains.com/issue/PY-35688/Jupyter-notebook-using-wrong-executable-and-path
+https://stackoverflow.com/questions/46634660/jupyter-notebook-wrong-sys-path-and-sys-executable
+
+
+(Atg9b) [li11@cn040701/ib01 pScripts]$ jupyter kernelspec list
+Available kernels:
+  python3    /ddn/gs1/home/li11/miniconda3/envs/Atg9b/share/jupyter/kernels/python3
+  36env      /ddn/gs1/home/li11/.local/share/jupyter/kernels/36env
+
+It turns out when I open any existing notebook, it uses "system" level kernel, which is 36env. I can change this from the web-page and choose the correct kernel:"Python3 ipykernel"
+
+Now, what if I go back and launch the jupyter notebook with default "jupyter noteboo "??
+
+
 
 ##==========================================================================================
 I am getting stuck installing [y/n] on Jupyter notebook, 
