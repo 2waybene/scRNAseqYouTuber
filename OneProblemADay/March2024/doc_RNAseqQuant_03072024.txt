@@ -1,0 +1,34 @@
+Here, I want to quickly get the expression abundance of Atg9b gene
+
+Subread claims that it is a superfast and accurate read aligner BUT only for gene expression purposes
+
+# https://subread.sourceforge.net/subread.html
+
+Subread: a superfast and accurate read aligner
+The Subread aligner is a general-purpose read aligner, which can be used to map reads generated from both genomic DNA sequencing and RNA sequencing technologies.
+
+When mapping RNA-seq reads, Subread should only be used for the purpose of gene expression analysis. For other purposes (eg. detecting genomic variations) which require the full alignments of the reads, the Subjunc aligner should be used.
+
+Since I have already aligned the reads with STAR, I may use other means
+
+I encountered an error when running the "featureCounts":
+
+It turns out there are two parameters need to be set:
+
+
+  -p                  If specified, libraries are assumed to contain paired-end
+                      reads. For any library that contains paired-end reads, the
+                      'countReadPairs' parameter controls if read pairs or reads
+                      should be counted.
+
+  --countReadPairs    If specified, fragments (or templates) will be counted
+                      instead of reads. This option is only applicable for
+                      paired-end reads. For single-end data, it is ignored.
+
+
+
+
+featureCounts -T 6 -p -a /ddn/gs1/home/li11/refDB/gencode/gencode.vM34.basic.annotation.gtf -o /ddn/gs1/home/li11/project2024/CharlyProject/Atg9b_project/Sh
+awData/mm39STAR/242R4_featurecounts.txt /ddn/gs1/home/li11/project2024/CharlyProject/Atg9b_project/ShawData/mm39STAR/242R4.Aligned.sortedByCoord.out.bam
+
+
