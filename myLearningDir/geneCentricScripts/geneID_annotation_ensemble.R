@@ -1,6 +1,6 @@
 
 ##=====================================================
-##  Now, let's work on Mouse related ID questions
+##  Mouse ID questions
 ##=====================================================
 
 
@@ -19,9 +19,9 @@ head(RNAseq_datamatrix)
 mouseEntrezSymbol <- RNAseq_datamatrix$X
 head(mouseEntrezSymbol)
 
-##==============================
-##  use "gconvert" function
-##==============================
+##================================
+##  use "gconvert" function     ==
+##================================
 geneDesc <- gconvert(query = normdata_comparison_1$X, organism = "mmusculus",
          target="ENSG", mthreshold = Inf, filter_na = TRUE)
 
@@ -58,8 +58,8 @@ dim(df)
 
 ##====================================
 ##  use org.Mm.eg.db database query
+##  -- AnnotationDbi -- 
 ##====================================
-
 library(tidyverse)
 library(org.Mm.eg.db)
 library(clusterProfiler)
@@ -90,8 +90,8 @@ dim(df1)
 
 ##======================================================
 ##  Goal 2:  ...convert ensemble ID to gene symbol
+##        use biomaRt
 ##======================================================
-
 library(EnsDb.Mmusculus.v79)
 library(org.Mm.eg.db)
 library(biomaRt)
