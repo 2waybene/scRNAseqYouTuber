@@ -1,0 +1,8 @@
+Server: ib01 server (cn040701)
+conda/python environment: NSForest
+Comand: jupyter notebook --no-browser --port=8889 --ip=0.0.0.0
+Depenency: installed with pip inside jupyter notebook
+Credit: https://colab.research.google.com/github/10XGenomics/analysis_guides/blob/main/TrajectoryAnalysisTutorial_GitHub.ipynb#scrollTo=cb39697d
+Credit: https://github.com/10XGenomics/analysis_guides/blob/main/slides/Community_developed_tools_RNA_velocity.pdf
+
+
