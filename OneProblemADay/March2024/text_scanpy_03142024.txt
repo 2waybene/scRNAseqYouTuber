@@ -1,0 +1,41 @@
+There are just not that rosy with open source software. Now, I can't follow the tutorial for scanpy. I can't do sc.pl.violin with "mutli_panel=True)
+
+It turns out it is the problem with seaborn, see the following
+
+
+https://github.com/scverse/scanpy/issues/2680
+
+
+Hey,
+
+indeed there seems to be an issue with our current usage of seaborn, not working with seaborn 0.13.0.
+This has been fixed on the main branch here, and we'll eventually take over the newest seaborn version once this is cleared.
+
+For users running into this issue now
+
+first check if you indeed have seaborn 0.13.0. If yes, then do
+pip install seaborn==0.12.2 if using pip or
+conda install seaborn=0.12.2 if using conda
+this makes sure you are using the working version of seaborn.
+
+Hope this helps!
+
+And, once I downgradet the seaborn, 
+
+scanpy can't be loaded!!
+
+It then prompts me to down grade pandas, what a mess!!
+
+https://stackoverflow.com/questions/76234312/importerror-cannot-import-name-is-categorical-from-pandas-api-types
+
+The latest version of pandas 2.0.1 seems to not have is_categorical but instead it has is_categorical_dtype. Seems that in hic2cool, pandas version is not pinned to the one that has that.
+
+I suggest installing a previous version of pandas before the changes took place.
+
+Or install a newer version of cooler as they updated their library to use is_categorical_dtype
+
+I solve the problem by downgrading the pandas == 1.5.3
+
+In the mean time, I want to start a new python virtual environment!!!
+
+

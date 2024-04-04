@@ -1,0 +1,10 @@
+For whatever reason, I can't find my note from yesterday, anyway, I start again and hopefully, I can document it well.
+
+To switch/learn scanpy, I give credit to a few sources:
+
+10x genomics -- velocity study
+sanpy tutorial
+AnnData
+Sanbomics
+
+
