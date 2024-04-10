@@ -1,0 +1,9 @@
+Today, I am checking out an old colleague's analysis history, 
+
+I am attempt to activate her conda virtual enviroment by modifying my .condarc file
+
+And, that seems to work, but there are installations that look for the python interpreter under her home directory that breaks the working link anyway.
+
+So, good to know if something works and have to figure it out if they stop working.
+
+One example would be the VEP that still not working for me, have to figure that out.

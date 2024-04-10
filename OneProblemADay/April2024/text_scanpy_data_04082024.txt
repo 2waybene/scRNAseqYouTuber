@@ -1,0 +1,21 @@
+Today, I looked at the sanbomic tutorial videos again, and really feel the need to 
+test on the published data/paper, just to help to verify the results. 
+
+currently, I have seen a few tutorial on the public data, and will attempt to re-do what they have done
+
+
+Will do a few examples as a trial:
+
+
+Here are some public data:
+What I know are:
+
+SRA, ERA, NCBI, UCSC, Rfam, Gencode 
+
+## Tabula sapien lung data:
+wget https://figshare.com/ndownloader/files/34701991
+
+
+
+
+

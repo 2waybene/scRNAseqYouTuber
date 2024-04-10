@@ -7,4 +7,9 @@ sanpy tutorial
 AnnData
 Sanbomics
 
+I have a python virtual environment: scanpyBasic on ib01, and it works so far so good
+I have access to niehs jupyterhub for most of the analysis
+
+For Sanbomics, my working directory would be ~/project2024/scRNAseqShortCourse2024/ScanpySanbomics
+
 
