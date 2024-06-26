@@ -1,6 +1,7 @@
 # script to perform trajectory analysis
 # https://www.nature.com/articles/s41467-019-10291-0
 # setwd("~/Desktop/demo/monocle3")
+# data download: http://scrna.sklehabc.com/
 
 set.seed(1234)
 
